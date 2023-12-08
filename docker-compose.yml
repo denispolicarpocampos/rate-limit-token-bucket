@@ -14,8 +14,10 @@ services:
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      - RAILS_ENV=development
     volumes:
-      - .:/app
+      - .:/rails
     ports:
       - 3010:3000
     depends_on:
